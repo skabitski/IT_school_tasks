@@ -6,7 +6,7 @@
 
 let resultPlus = document.getElementById("res_plus");
 let plusIngA = document.getElementById("inp_plus_a");
-let plusIngB = document.getElementById("inp_plus_b");
+let plusIngB = document.getElementById("iфnp_plus_b");
 
 let resultMinus = document.getElementById("res_del");
 let minusA = document.getElementById("inp_del_a");
