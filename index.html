@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="images/">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" id="inp_plus_a">
+        <button type="button" id="btn_plus" onclick="sumPlus()">+</button>
+        <input type="text" id="inp_plus_b">
+        <div id="res_plus" onclick="divColor()"></div>
+
+        <input type="text">
+        <button type="button" id="btn_minus">-</button>
+        <input type="text">
+        <div></div>
+        
+        <input type="text" id="inp_del_a">
+        <button type="button" id="btn_del" onclick="sumDel()">:</button>
+        <input type="text" id="inp_del_b">
+        <div id="res_del"></div>
+
+        <input type="text">
+        <button type="button" id="btn_mno">*</button>
+        <input type="text">
+        <div></div>
+
+        <button>CLEAR</button>
+
+        <!-- <button id="evo" onclick="calculate()">=</button> -->
+        <!-- <script>
+            //     function aPlus() {
+            //         let a = prompt(`Введите число`);
+            //         let b = prompt(`Введите число`);
+            //         { alert(Number(a) + Number(b)) }
+            //     }
+            //     function aMinus() {
+            //         let a = prompt(`Введите число`);
+            //         let b = prompt(`Введите число`);
+            //         { alert(Number(a) - Number(b)) }
+            //     }
+            //     function aDel() {
+            //         let a = prompt(`Введите число`);
+            //         let b = prompt(`Введите число`);
+            //         { alert(Number(a) / Number(b)) }
+            //     }
+            //     function aMn() {
+            //         let a = prompt(`Введите число`);
+            //         let b = prompt(`Введите число`);
+            //         { alert(Number(a) * Number(b)) }
+            //     }
+            // </script> -->
+    </form>
+    <h2>
+        <li>
+            <img id="ser" src="images/photo_2024-02-27_10-53-32.jpg" alt="">
+            <img id="me" src="images/photo_2024-02-27_10-58-16.jpg" alt="">
+        </li>
+    </h2>
+    <form action="">
+        <button id="btn_lft" type="button" onclick="changeImage(-1)"> < </button>
+        <button id="btn_rgt" type="button" onclick="changeImage(1)"> > </button>
+    </form>
+
+
+    
+
+</body>
+
+</html>
