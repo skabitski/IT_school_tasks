@@ -1,19 +1,20 @@
-// let date = new Date();
-// let time = date.getHours();
+let date = new Date();
+let time = date.getHours();
 
-// if (time < 10) {
-//   alert("Доброе утро!");
-// } else {
-//   alert("Добрый день!");
-// }
+if (time < 10) {
+  alert("Доброе утро!");
+} else {
+  alert("Добрый день!");
+}
 
-// time < 10 ? alert("Доброе утро!") : alert("Добрый день!");
+time < 10 ? alert("Доброе утро!") : alert("Добрый день!");
 
 let whiteC = document.getElementById("white");
 let orangeC = document.getElementById("orange");
 let grayC = document.getElementById("gray");
 let selectColor = document.getElementById("mySelect");
 let divColors = document.getElementById("divcolor");
+
 
 function colorChange() {
   let selectedColor = selectColor.value;
