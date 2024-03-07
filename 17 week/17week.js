@@ -8,6 +8,11 @@
 // let now = new Date()
 // alert(now)
 
+function capitalizeFirstLetter(transformFullName) {
+    return transformFullName.charAt(0).toUpperCase() + transformFullName.slice(1).toLowerCase();
+}
+
+
 
 function transformFullName() {
    
@@ -33,6 +38,3 @@ function transformFullName() {
     }
 }
 
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-}
