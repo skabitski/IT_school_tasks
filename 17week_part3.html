@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Numbers Generator</title>
+</head>
+<body>
+    <button onclick="generateNumbers()">Сгенерировать числа</button>
+    <div id="output"></div>
+
+    <script>
+        function generateNumbers() {
+            // Массив для хранения случайных чисел
+            let numbers = [];
+
+            // Генерируем 10 случайных чисел
+            for (let i = 0; i < 10; i++) {
+                numbers.push(Math.floor(Math.random() * 21) - 10); // Генерация чисел от -10 до 10
+            }
+
+            // Находим минимальное, максимальное и сумму чисел
+            let min = Math.min(...numbers);
+            let max = Math.max(...numbers);
+            let sum = numbers.reduce((acc, curr) => acc + curr, 0);
+            let average = sum / numbers.length;
+
+            // Находим произведение чисел
+            let product = numbers.reduce((acc, curr) => acc * curr, 1);
+
+            // Формируем вывод
+            let output = 'Сгенерированные числа: ' + numbers.join(', ') + '<br>';
+            output += 'Минимальное: ' + min + '<br>';
+            output += 'Максимальное: ' + max + '<br>';
+            output += 'Среднее арифметическое: ' + average.toFixed(2) + '<br>';
+            output += 'Сумма чисел: ' + sum + '<br>';
+            output += 'Произведение чисел: ' + product + '<br>';
+
+            // Выводим результаты на страницу
+            document.getElementById('output').innerHTML = output;
+        }
+    </script>
+</body>
+</html>
