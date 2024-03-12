@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Заметки</title>
+<style>
+    #notes-container {
+        max-width: 400px;
+        margin: 20px auto;
+    }
+    #notes-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    .note {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .note input[type="text"] {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+</style>
+</head>
+<body>
+<div id="notes-container">
+    <h2>Мои заметки</h2>
+    <form id="note-form">
+        <input type="text" id="note-input" placeholder="Введите заметку">
+        <button type="submit">Добавить заметку</button>
+        <div id="error-message" class="error-message"></div>
+    </form>
+    <ul id="notes-list"></ul>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const noteForm = document.getElementById("note-form");
+        const noteInput = document.getElementById("note-input");
+        const notesList = document.getElementById("notes-list");
+        const errorMessage = document.getElementById("error-message");
+
+        // Восстановление заметок из локального хранилища при загрузке страницы
+        function loadNotes() {
+            const savedNotes = JSON.parse(localStorage.getItem("notes")) || [];
+            savedNotes.forEach(function(note) {
+                addNoteToList(note);
+            });
+        }
+        loadNotes();
+
+        // Функция добавления заметки в список и сохранения в локальном хранилище
+        function addNoteToList(noteText) {
+            const li = document.createElement("li");
+            li.className = "note";
+            li.textContent = noteText;
+            notesList.appendChild(li);
+        }
+
+        // Обработчик отправки формы
+        noteForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Предотвращение отправки формы по умолчанию
+
+            // Валидация введенной заметки
+            const noteValue = noteInput.value.trim();
+            if (noteValue === "") {
+                errorMessage.textContent = "Пожалуйста, введите заметку.";
+                return;
+            }
+
+            // Добавление заметки в список и сохранение в локальном хранилище
+            addNoteToList(noteValue);
+            const savedNotes = JSON.parse(localStorage.getItem("notes")) || [];
+            savedNotes.push(noteValue);
+            localStorage.setItem("notes", JSON.stringify(savedNotes));
+
+            // Очистка поля ввода и сообщения об ошибке
+            noteInput.value = "";
+            errorMessage.textContent = "";
+        });
+    });
+</script>
+</body>
+</html>
