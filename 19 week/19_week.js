@@ -27,6 +27,9 @@
 // city = "amstrdm";
 // console.log(person)
 
+
+/// TASK #1
+
 class Worker {
   constructor(name, surname, rate, days) {
     this.name = name;
