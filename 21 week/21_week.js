@@ -39,12 +39,12 @@ document.getElementById('searchForm').addEventListener('submit', function(event)
    
     fetch(apiUrl)
       .then(response => response.json())
-      .then(data => {
+      .then(giphyData => {
        
         document.getElementById('gifContainer').innerHTML = '';
         
     
-        data.data.forEach(gif => {
+        giphyData.data.forEach(gif => {
           const img = document.createElement('img');
           img.src = gif.images.fixed_height.url;
           document.getElementById('gifContainer').appendChild(img);
